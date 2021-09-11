@@ -1,11 +1,8 @@
 import React, { useState, useContext } from "react";
 import AuthService from "../Services/AuthService";
-import Message from "../Components/Message";
 import { AuthContext } from "../Context/AuthContext";
-import {Form,Button} from "react-bootstrap";
 const Login = (props) => {
   const [user, setUser] = useState({ username: "", password: "" });
-  const [message, setMessage] = useState(null);
   const authContext = useContext(AuthContext);
 
   const onChange = (e) => {
@@ -16,20 +13,17 @@ const Login = (props) => {
     e.preventDefault();
     AuthService.login(user).then((data) => {
       console.log(data);
-      const { isAuthenticated, user, message } = data;
+      const { isAuthenticated, user } = data;
       if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
         props.history.push("/todos");
-      } else setMessage(message);
+      } 
     });
   };
 
   return (
-    <div>
-    <br/>
-    <br/>
-    <br/>
+    <div className="login">
       <form onSubmit={onSubmit}>
       <div className="form-group">
                 <label htmlFor="username">Username</label>
@@ -50,7 +44,6 @@ const Login = (props) => {
                 <button className="btn btn-lg btn-primary btn-block" 
                         type="submit">Log in </button>
             </form>
-      {message ? <Message message={message} /> : null}
     </div>
   );
 };
