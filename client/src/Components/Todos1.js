@@ -1,7 +1,6 @@
 import React, {useState,useContext,useEffect} from 'react';
-import TodoItem1 from './TodoItem1';
+import TodoItem1 from './TodoItem';
 import TodoService1 from '../Services/TodoService1';
-import Message from './Message';
 import { AuthContext } from '../Context/AuthContext';
 import { ListGroup } from "react-bootstrap";
 
@@ -49,7 +48,6 @@ const Todos = props =>{
 
     return(
         <div>
-            <br/>
             <h1 className="head">Vegetable List</h1>
              <ListGroup variant="flush" className="list">
                 {
@@ -58,19 +56,17 @@ const Todos = props =>{
                     })
                 }
                 </ListGroup>
-            <br/>
-            <br/>
-            <form onSubmit={onSubmit}>
+                <form onSubmit={onSubmit} className="headers">
             <div class="form-group">
-                <label htmlFor="todo"><h1>Favorite Vegetable</h1></label>
+                <label htmlFor="todo"><h2>Favorite Vegetable</h2></label>
                 <input type="text" 
                        name="todo" 
                        value={todo.name} 
                        onChange={onChange}
                        className="form-control"
-                       placeholder="Please Enter Favorite Vegetable"/>
+                       placeholder="Please Enter Favorite Fruit"/>
             </div>
-                <button className="btn btn-lg btn-primary " 
+                <button className="btn btn-lg btn-primary" 
                         type="submit">Submit</button>
             </form>
         </div>
