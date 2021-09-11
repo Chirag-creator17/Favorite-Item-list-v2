@@ -18,12 +18,21 @@ li{
 h1{
     font-family: 'Balsamiq Sans', cursive;
 }
+h3{
+    text-decoration: underline;
+}
 .head{
-    padding-top: 55px;
+    padding-top: 70px;
 }
 .headers{
-    margin-top: 60px;
+    margin-top: 30px;
 }
 .tables{
     font-size: 21px;
 }
+.login{
+    padding-top: 80px;
+}
+
+
+
