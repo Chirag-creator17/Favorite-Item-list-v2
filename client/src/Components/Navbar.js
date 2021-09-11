@@ -4,7 +4,7 @@ import { AuthContext } from "../Context/AuthContext";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 const NavBar = (props) => {
-  const { isAuthenticated, user, setIsAuthenticated, setUser } =
+  const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(AuthContext);
 
   const onClickLogoutHandler = () => {
@@ -35,9 +35,6 @@ const NavBar = (props) => {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/todos">Fruits</Nav.Link>
           <Nav.Link href="/todos1">Vegetables</Nav.Link>
-          {/* {user.role === "admin" ? (
-            <Nav.Link href="/admin">Admin</Nav.Link>
-        ) : null} */}
         </Nav>
         <Nav>
           <button
