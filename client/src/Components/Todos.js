@@ -49,7 +49,6 @@ const Todos = props =>{
 
     return(
         <div>
-            <br/>
             <h1 className="head">Fruit List</h1>
             <ListGroup variant="flush" className="list">
                 {
@@ -58,11 +57,9 @@ const Todos = props =>{
                     })
                 }
             </ListGroup>
-            <br/>
-            <br/>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="headers">
             <div class="form-group">
-                <label htmlFor="todo"><h1>Favorite Fruit</h1></label>
+                <label htmlFor="todo"><h2>Favorite Fruit</h2></label>
                 <input type="text" 
                        name="todo" 
                        value={todo.name} 
