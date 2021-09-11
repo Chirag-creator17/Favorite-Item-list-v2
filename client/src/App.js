@@ -5,8 +5,6 @@ import Home from './Components/Home';
 import Todos from './Components/Todos';
 import Todos1 from './Components/Todos1';
 import Register from './Components/Register';
-import PrivateRoute from './hocs/PrivateRoute';
-import UnPrivateRoute from './hocs/UnPrivateRoute';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
@@ -14,10 +12,10 @@ function App() {
     <Router>
       <NavBar/>
       <Route exact path="/" component={Home}/>
-      <UnPrivateRoute path="/login" component={Login}/>
-      <UnPrivateRoute path="/register" component={Register}/>
-      <PrivateRoute path="/todos" roles={["user","admin"]} component={Todos}/>
-      <PrivateRoute path="/todos1" roles={["user","admin"]} component={Todos1}/>
+      <Route path="/login" component={Login}/>
+      <Route path="/register" component={Register}/>
+      <Route path="/todos" roles={["user","admin"]} component={Todos}/>
+      <Route path="/todos1" roles={["user","admin"]} component={Todos1}/>
     </Router>
   );
 }
