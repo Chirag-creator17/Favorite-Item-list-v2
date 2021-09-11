@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const cookieParser = require('cookie-parser');
-const mongoose = require('mongoose');
+import cookieParser from 'cookie-parser';
+import mongoose from 'mongoose';
 app.use(cookieParser());
 app.use(express.json());
 
