@@ -38,10 +38,7 @@ const Register = props=>{
 
 
     return(
-        <div>
-        <br/>
-        <br/>
-        <br/>
+        <div className="login">
             <form onSubmit={onSubmit}>
             <div class="form-group">
                 <label htmlFor="username">Username </label>
